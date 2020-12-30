@@ -6,10 +6,21 @@ category = "main"
 optional = false
 python-versions = "*"
 
+[[package]]
+name = "rope"
+version = "0.18.0"
+description = "a python refactoring library..."
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.extras]
+dev = ["pytest"]
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "3a155195aa8f30dc5dd70237a0f46ceecf2bfa80f54984fa4c1c5e1258862fcb"
+content-hash = "eb342089348f0773936da7e2e366be46d61fce8a30379c5ed8d68fe0f4aa4edb"
 
 [metadata.files]
 pygame = [
@@ -54,4 +65,7 @@ pygame = [
     {file = "pygame-2.0.1-pp37-pypy37_pp73-manylinux2010_i686.whl", hash = "sha256:a4e35d89b6754941e82df1ce980a1c370943d3c076938d94ed1e48165dd6a11b"},
     {file = "pygame-2.0.1-pp37-pypy37_pp73-manylinux2010_x86_64.whl", hash = "sha256:b812285d23b5644c643a6ae30553a772f935f47f61826660b108b8727936384b"},
     {file = "pygame-2.0.1.tar.gz", hash = "sha256:8b1e7b63f47aafcdd8849933b206778747ef1802bd3d526aca45ed77141e4001"},
+]
+rope = [
+    {file = "rope-0.18.0.tar.gz", hash = "sha256:786b5c38c530d4846aa68a42604f61b4e69a493390e3ca11b88df0fbfdc3ed04"},
 ]
