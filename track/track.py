@@ -1,4 +1,5 @@
 import math
+import json
 
 class TrackSegment:
     
@@ -18,9 +19,11 @@ class StraightSegment(TrackSegment):
     
     def __init__(self, left, bottom, track_width, length, angle):
         self.angle = angle
+        self.length = length
         radians = math.radians(angle)
         height = (length * math.sin(radians)) + (track_width * math.cos(radians))
-        right = left + (track_width * math.sin(radians)) + (length * math.cos(radians))
+        width = (track_width * math.sin(radians)) + (length * math.cos(radians))
+        # right = left + (track_width * math.sin(radians)) + (length * math.cos(radians))
         
         # width = length * math.cos(math.radians(angle))
         super().__init__(left, bottom, height, width, angle, angle, track_width)
@@ -39,13 +42,14 @@ class StraightSegment(TrackSegment):
 
     def TopLeft(self):
         radians = math.radians(self.angle)
-        vector = self._vector()
+        vector = self._Vector()
         return (self.left + vector[0], self.bottom + vector[1])
 
     def TopRight(self):
         radians = math.radians(self.angle)
-        vector = self._vector()
-        return (self.left + (self.track_width * math.sin(radians)) + (vector[0]), self.bottom)
+        vector = self._Vector()
+        width_vector = self._WidthVector()
+        return (self.left + vector[0] + width_vector[0], self.bottom + vector[1] + width_vector[1])
     
     def BottomRight(self):
         radians = math.radians(self.angle)
