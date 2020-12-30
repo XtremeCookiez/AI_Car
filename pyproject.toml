@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "ai_car"
+version = "0.1.0"
+description = "A basic car simulator with hooks for AI drivers"
+authors = ["Cameron Winter <10819480+XtremeCookiez@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
